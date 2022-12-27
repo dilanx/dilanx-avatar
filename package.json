@@ -4,6 +4,11 @@
   "description": "Avatar components for auth.dilanxd.com accounts",
   "main": "index.js",
   "prettier": "@dilanx/config/prettier",
+  "files": [
+    "index.js",
+    "components"
+  ],
+  "type": "module",
   "scripts": {},
   "repository": {
     "type": "git",
