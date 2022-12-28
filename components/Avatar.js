@@ -1,3 +1,5 @@
+import { createElement } from 'react';
+
 function stats(colorHex) {
   const color = parseInt(colorHex.replace('#', ''), 16);
   const r = (color >> 16) & 0xff;
@@ -12,31 +14,27 @@ function stats(colorHex) {
 
 export default function Avatar({ size, color, text }) {
   const { dark, border } = stats(color);
-  return (
-    <div
-      style={{
-        width: size || 64,
-        height: size || 64,
-        backgroundColor: color,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: '25%',
-        border: border ? '2px solid #000000' : 'none',
-        boxSizing: 'border-box',
-      }}
-    >
-      <p
-        style={{
-          margin: 0,
-          fontFamily: 'sans-serif',
-          fontWeight: 'bold',
-          fontSize: size ? size / 1.75 : 32,
-          color: dark ? '#ffffff' : '#000000',
-        }}
-      >
-        {text}
-      </p>
-    </div>
-  );
+  return createElement('div', {
+    style: {
+      width: size || 64,
+      height: size || 64,
+      backgroundColor: color,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: '25%',
+      border: border ? '2px solid #000000' : 'none',
+      boxSizing: 'border-box',
+    },
+    children: createElement('p', {
+      style: {
+        margin: 0,
+        fontFamily: 'sans-serif',
+        fontWeight: 'bold',
+        fontSize: size ? size / 1.75 : 32,
+        color: dark ? '#ffffff' : '#000000',
+      },
+      children: text,
+    }),
+  });
 }
