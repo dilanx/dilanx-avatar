@@ -1,6 +1,6 @@
 {
   "name": "@dilanx/avatar",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Avatar components for auth.dilanxd.com accounts",
   "main": "index.js",
   "prettier": "@dilanx/config/prettier",

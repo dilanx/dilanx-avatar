@@ -1,3 +1,3 @@
-import Avatar from './components/Avatar';
+import Avatar from './components/avatar.js';
 
 export { Avatar };
