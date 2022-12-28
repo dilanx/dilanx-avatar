@@ -12,9 +12,10 @@ function stats(colorHex) {
   };
 }
 
-export default function Avatar({ size, color, text }) {
+export default function Avatar({ className, size, color, text }) {
   const { dark, border } = stats(color);
   return createElement('div', {
+    className,
     style: {
       width: size || 64,
       height: size || 64,
