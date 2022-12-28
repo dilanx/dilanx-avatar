@@ -7,7 +7,7 @@ function stats(colorHex) {
   const b = color & 0xff;
   const luma = 0.2126 * r + 0.7152 * g + 0.0722 * b;
   return {
-    dark: luma < 40,
+    dark: luma < 100,
     border: luma > 255 - 10,
   };
 }
